@@ -1,6 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Stay Nest</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            margin-top: 40px;
+            background: rgb(2, 19, 36);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: Verdana, sans-serif;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .about-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-about {
+            background: #fff;
+            padding: 40px 0;
+        }
+
+        .about-about i {
+            font-size: 50px;
+            color: #0073e6;
+            margin-top: 20px;
+        }
+
+        /* Mission & Vision Section */
+        .about-mission-vision {
+            background: rgba(15, 3, 43, 0.3);
+            padding: 40px 0;
+        }
+
+        .about-box {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-mission-vision i {
+            font-size: 40px;
+            color: rgb(3, 23, 43);
+            margin-bottom: 10px;
+        }
+
+        /* Why Choose Us Section */
+        .about-why-choose-us {
+            background: #fff;
+            padding: 40px 0;
+        }
+
+        .about-why-choose-us .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .about-why-choose-us .about-feature {
+            width: 45%;
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-why-choose-us i {
+            font-size: 40px;
+            color: #0073e6;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .about-container {
+                width: 95%;
+            }
+
+            .about-about i {
+                font-size: 40px;
+            }
+
+            .about-mission-vision .about-box, .about-why-choose-us .about-feature {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .about-why-choose-us .about-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .about-about i, .about-mission-vision i, .about-why-choose-us i {
+                font-size: 30px;
+            }
+
+            .about-box, .about-feature {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
+<body>
 
 <header>
     <h1>About Stay Nest</h1>
@@ -56,103 +210,5 @@
     </div>
 </section>
 
-<style>
-/* General Styles */
-body {
-    font-family: verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    margin-top: 20px;
-    background: rgb(2, 19, 36);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    font-family: verdana, sans-serif;
-}
-
-h1, h2 {
-    font-weight: bold;
-}
-
-.about-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* About Section */
-.about-about {
-    background: #fff;
-    padding: 40px 0;
-}
-.about-about i {
-    font-size: 50px;
-    color: #0073e6;
-    margin-top: 10px;
-}
-
-/* Mission & Vision Section */
-.about-mission-vision {
-    background: rgba(15, 3, 43, 0.3);
-    padding: 40px 0;
-}
-
-.about-box{
-    height: 200px;
-    justify-content: center;
-}
-
-.about-mission-vision .about-box {
-    display: inline-block;
-    width: 45%;
-    padding: 20px;
-    background: #fff;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-.about-mission-vision i {
-    font-size: 40px;
-    color: rgb(3, 23, 43);
-}
-
-/* Why Choose Us Section */
-.about-why-choose-us {
-    background: #fff;
-    padding: 40px 0;
-}
-.about-why-choose-us .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.about-why-choose-us .about-feature {
-    width: 45%;
-    background: #f9f9f9;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.about-why-choose-us i {
-    font-size: 40px;
-    color: #0073e6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-mission-vision .about-box, .about-why-choose-us .about-feature {
-        width: 100%;
-    }
-}
-</style>
+</body>
+</html>

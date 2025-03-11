@@ -1,0 +1,4 @@
+cd Program Files\MySQL\MySQL Workbench 8.0
+CREATE USER 'pma'@'localhost' IDENTIFIED BY 'SandHut@123*';
+GRANT ALL PRIVILEGES ON phpmyadmin.* TO 'pma'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

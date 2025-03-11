@@ -1,0 +1,97 @@
+	
+## **🔹 StayNest PG Application Flow**
+
+### **1️⃣ User Journey (For Renters/Customers)**
+#### **🔹 Step 1: User Visits StayNest**
+- User lands on the **homepage** (`index.php`).
+- They see **featured PG listings** and a **search bar**.
+
+#### **🔹 Step 2: Search & Browse PGs**
+- User can **search** for PGs by:
+  - Location
+  - Price range
+  - Facilities (WiFi, AC, Meals, etc.)
+- The search results appear on the **listings page (`listings.php`)**.
+
+#### **🔹 Step 3: View PG Details**
+- User clicks on a PG to view more details (`pg_details.php`).
+- They see:
+  - Images
+  - Amenities
+  - Pricing
+  - Owner contact details (optional)
+
+#### **🔹 Step 4: Booking a PG**
+- If interested, the user **books the PG** by:
+  - Clicking **"Book Now"**.
+  - Filling out a **booking form** (Check-in date, Duration, Payment method).
+  - Submitting the request.
+
+#### **🔹 Step 5: Confirmation & Payment**
+- The booking is stored in the **database**.
+- The user gets a **confirmation message**.
+- If online payment is integrated:
+  - User pays via Razorpay/PayPal/etc.
+  - Payment details get stored in the **Payments table**.
+
+#### **🔹 Step 6: Dashboard & Booking Management**
+- User can log in to **dashboard.php** to:
+  - View **booking status**.
+  - Cancel a booking (if allowed).
+  - Download **invoices** (if payments are recorded).
+
+---
+
+### **2️⃣ PG Owner/Admin Journey**
+#### **🔹 Step 1: Admin Login**
+- The **PG owner or admin** logs in (`admin/login.php`).
+
+#### **🔹 Step 2: Add New PG Listings**
+- Admin can:
+  - Add a **new PG** (`admin/add_pg.php`).
+  - Upload **images & amenities**.
+  - Set **pricing & availability**.
+
+#### **🔹 Step 3: Manage Bookings**
+- Admin can:
+  - **View pending bookings**.
+  - **Approve/reject requests**.
+  - Track **payments received**.
+
+#### **🔹 Step 4: Manage Users**
+- Admin can:
+  - View **registered users**.
+  - Manage **reviews & complaints**.
+
+---
+
+## **🔹 Database Structure (MySQL)**
+| **Table Name**  | **Purpose** |
+|---------------|-------------|
+| `users`  | Stores user details (name, email, password, phone) |
+| `pg_listings` | Stores PG details (name, location, price, facilities) |
+| `bookings`  | Stores booking details (user ID, PG ID, check-in date, status) |
+| `payments` | Stores payment details (booking ID, amount, status) |
+| `admin`  | Stores admin credentials |
+
+---
+
+## **🔹 Tech Stack**
+✅ **Frontend:** HTML, CSS, JavaScript  
+✅ **Backend:** PHP  
+✅ **Database:** MySQL  
+✅ **Authentication:** PHP Sessions  
+✅ **Payment Integration:** Razorpay (Optional)  
+
+---
+
+## **🔹 Next Steps**
+✅ Set up **database tables**  
+✅ Create **authentication system**  
+✅ Build **PG listing & booking features**  
+✅ Implement **admin panel**  
+✅ Test and fix bugs  
+
+---
+
+This should give you a **clear roadmap** for StayNest! 🎯 Let me know which step you need help with. 🚀

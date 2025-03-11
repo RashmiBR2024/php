@@ -20,63 +20,119 @@ if (empty($images)) {
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <style>
-    .carousel{
+    .carousel {
         width: 100%;
     }
 
-    .carousel-control-prev {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        top: 50%;
-        left: 2%;
-    }
-
+    .carousel-control-prev,
     .carousel-control-next {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         top: 50%;
-        right: 2%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
     }
 
     .banner-container {
         position: relative;
-       height: 400px; /* Adjust height as needed */
+        height: 400px; /* Adjust height as needed */
         overflow: hidden;
+        display: flex;
+        align-items: center;
     }
-    
+
     .banner-container img {
-        object-fit: fill; /* Ensures the image covers the banner */
-        right: 0;
-        padding-left: 45%;
-    }
-    
-    .banner-text {
-        width: 40%;
+        width: 50%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the banner */
         position: absolute;
-        top: 45%;
-        left: 25%;
-        transform: translate(-50%, -50%);
+        right: 0;
+    }
+
+    .banner-text {
+        width: 45%;
+        position: absolute;
+        left: 5%;
         color: rgba(26, 4, 58, 0.9);
         font-family: 'Sofia', sans-serif;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
-        text-align: center;
+        text-align: left;
         padding: 10px 20px;
         border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8); /* Add background for better readability */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .banner-container {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        .banner-text {
+            width: 90%;
+            position: relative;
+            left: 0;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2rem;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better readability */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .banner-container img {
+            height: 250px;
+        }
+
+        .banner-text {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .banner-container img {
+            height: 200px;
+        }
+
+        .banner-text {
+            font-size: 1.5rem;
+            width: 95%;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            height: 30px;
+            width: 30px;
+        }
     }
 </style>
 
 <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner banner-container">
+    <div class="carousel-inner">
         <?php foreach ($images as $index => $image): ?>
             <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>" data-bs-interval="2500">
-                <img src="<?php echo $image; ?>" alt="Banner Image">
-                <div class="banner-text">
-                    <?php echo isset($bannerTexts[$index]) ? $bannerTexts[$index] : ''; ?> <!-- Dynamic text for each banner -->
+                <div class="banner-container">
+                    <div class="banner-text">
+                        <?php echo isset($bannerTexts[$index]) ? $bannerTexts[$index] : ''; ?> <!-- Dynamic text for each banner -->
+                    </div>
+                    <img src="<?php echo $image; ?>" alt="Banner Image">
                 </div>
             </div>
         <?php endforeach; ?>
